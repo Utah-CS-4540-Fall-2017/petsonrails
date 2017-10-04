@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @animal_subtype.name %>
+</p>
+
+<p>
+  <strong>Animal type:</strong>
+  <%= @animal_subtype.animal_type_id %>
+</p>
+
+<%= link_to 'Edit', edit_animal_subtype_path(@animal_subtype) %> |
+<%= link_to 'Back', animal_subtypes_path %>

@@ -1,0 +1,27 @@
+<%= form_with(model: animal_subtype, local: true) do |form| %>
+  <% if animal_subtype.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(animal_subtype.errors.count, "error") %> prohibited this animal_subtype from being saved:</h2>
+
+      <ul>
+      <% animal_subtype.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :animal_subtype_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :animal_type_id %>
+    <%= form.number_field :animal_type_id, id: :animal_subtype_animal_type_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
