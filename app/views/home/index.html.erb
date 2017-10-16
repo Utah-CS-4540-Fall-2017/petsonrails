@@ -1,3 +1,14 @@
-Click here if you're a pet owner!
+<% if @needs_registration %>
+  <%= render 'register_me' %>
+<% end %>
 
-Click here if you're a pet sitter!
+<% if @is_owner %>
+  <% @pets.each do |pet| %>
+    <%= form_for pet do |one_pets_form| %>
+        Name: <%= one_pets_form.text_field :name %></br>
+        Size: <%= one_pets_form.select :size, Pet.sizes_for_select %></br>
+        Housebroken?: <%= one_pets_form.check_box :is_housetrained %></br>
+        <%= one_pets_form.submit "Save Pet Information" %>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,0 +1,23 @@
+<h2>Whoa!</h2>
+<p>We don't know yet if you are a sitter or an owner (or both!).</p>
+<%= form_tag register_me_path do %>
+  <table>
+    <tr>
+      <td>
+        <%= check_box_tag :is_owner %>
+      </td>
+      <td>
+        I am a pet owner
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= check_box_tag :is_sitter %>
+      </td>
+      <td>
+        I am a sitter
+      </td>
+    </tr>
+  </table>
+  <%= submit_tag 'Save My Preference' %>
+<% end %>

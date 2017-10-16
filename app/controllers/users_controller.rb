@@ -61,6 +61,29 @@ class UsersController < ApplicationController
     end
   end
 
+
+  # setup the user's owner and/or sitter objects
+  # We can identify if the checkboxes were checked by looking for
+  # the existence of their names as keys in the params object and their
+  # values as '1' (as string)
+  def register_me
+    if params[:is_owner] == '1'
+      # create an owner object and associate it with the current user
+      current_user.create_owner
+      flash.notice = 'You are now registered as an owner!'
+    end
+    if params[:is_sitter] == '1'
+      # create a sitter object and associate it with the current user
+      current_user.create_sitter
+      if current_user.owner
+        flash.notice = 'You are registered as both an owner and a sitter!'
+      else
+        flash.notice = 'You are registered as a sitter!'
+      end
+    end
+    redirect_to :root
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

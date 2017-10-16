@@ -9,6 +9,7 @@
 #  animal_subtype_id :integer
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  name              :string
 #
 
 class Pet < ApplicationRecord
@@ -17,6 +18,10 @@ class Pet < ApplicationRecord
   has_one :animal_type, through: :animal_subtype
 
   enum size: [:small, :medium, :large]
+
+  def self.sizes_for_select
+    ['small','medium','large']
+  end
 
   def animal_name
     if animal_sub_type

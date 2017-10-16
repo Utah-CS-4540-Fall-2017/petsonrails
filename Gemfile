@@ -43,6 +43,10 @@ gem 'faker'
 # to add user authentication
 gem 'devise'
 
+# bootstrap
+gem 'bootstrap-sass'
+gem 'jquery-rails'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

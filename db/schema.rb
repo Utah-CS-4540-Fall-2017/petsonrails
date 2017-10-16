@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170925231759) do
+ActiveRecord::Schema.define(version: 20171004230627) do
 
   create_table "animal_subtypes", force: :cascade do |t|
     t.string "name"
@@ -37,6 +37,13 @@ ActiveRecord::Schema.define(version: 20170925231759) do
     t.boolean "is_housetrained"
     t.integer "owner_id"
     t.integer "animal_subtype_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+  end
+
+  create_table "sitters", force: :cascade do |t|
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

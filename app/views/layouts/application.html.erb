@@ -1,55 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>PetsOnRails</title>
-    <%= csrf_meta_tags %>
+  <div class='container'>
+    <head>
+      <title>PetsOnRails</title>
+      <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <body>
-    <table>
-      <tr>
-        <td>
-          <%= link_to image_url('dogonrails.jpg'), target: :_blank do %>
-            <%= image_tag 'dogonrails.jpg', height: '100' %>
-          <% end %>
-        </td>
-        <td>
-          <table>
-            <tr>
-              <td>
-                <div class='apptitle'>
-                  PetsOnRails
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                  <%- if user_signed_in? %>
-                    Welcome, <%= current_user.full_name %>
-                    <div class='linkbar'>
-                      <%= link_to 'Home', home_path %>
-                      &bull;
-                      <%= link_to 'Profile', edit_user_registration_path %>
-                      &bull;
-                      <%= link_to 'About', about_path %>
-                      &bull;
-                      <%= link_to 'Help', help_page_for_pet_owners_path %>
-                      &bull;
-                      <%= link_to 'Logout', destroy_user_session_url , method: :delete %>
-                    </div>
-                  <% end %>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-    <%= session %>
-    <hr>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
-  </body>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+    <body>
+      <table>
+        <tr>
+          <td>
+            <%= link_to image_url('dogonrails.jpg'), target: :_blank do %>
+              <%= image_tag 'dogonrails.jpg', height: '100' %>
+            <% end %>
+          </td>
+          <td>
+            <table>
+              <tr>
+                <td>
+                  <div class='apptitle'>
+                    PetsOnRails
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <%- if user_signed_in? %>
+                      Welcome, <%= current_user.full_name %>
+                      <div class='linkbar'>
+                        <%= link_to 'Home', home_path %>
+                        &bull;
+                        <%= link_to 'Profile', edit_user_registration_path %>
+                        &bull;
+                        <%= link_to 'About', about_path %>
+                        &bull;
+                        <%= link_to 'Help', help_page_for_pet_owners_path %>
+                        &bull;
+                        <%= link_to 'Logout', destroy_user_session_url , method: :delete %>
+                      </div>
+                    <% end %>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <hr>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </body>
+  </div>
 </html>
