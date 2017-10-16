@@ -28,16 +28,16 @@
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  first_name: MyString
-  last_name: MyString
-  age: 1
-  zip_code: MyString
-  email: MyString
+pirate:
+  first_name: Jack
+  last_name: Sparrow
+  age: 43
+  zip_code: 82341
+  email: jack@pirates-r-us.com
 
-two:
-  first_name: MyString
-  last_name: MyString
-  age: 1
-  zip_code: MyString
-  email: MyString
+captain:
+  first_name: James
+  last_name: Kirk
+  age: 51
+  zip_code: 92384
+  email: jtkirk@starfleet.gov
